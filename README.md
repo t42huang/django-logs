@@ -57,9 +57,32 @@ Django is awesome! Django
 
 # create anther app for user authentication
 python manage.py startapp users
+## use Django's default view and user model
+
+>>> from django.contrib.auth.models import User
+>>> User.objects.all()
+<QuerySet [<User: bob>, <User: john>]>
+>>> for user in User.objects.all():
+...   print(user.id, user.username)
+...
+1 bob
+2 john
+
+# Migrate the database after adding foreign key relationship between Topic and User tables.
+python manage.py makemigrations djlogs
+python manage.py migrate
+
+# check if topics have owner now
+>>> from djlogs.models import Topic
+>>> for topic in Topic.objects.all():
+...   print(topic, topic.owner)
+...
+Django bob
+Flask bob
+Python bob
+PyGame bob
 
 ```
-
 
 ## Reference
 
