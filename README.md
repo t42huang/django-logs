@@ -15,15 +15,18 @@
 ```bash
 # bootstrap the project
 django-admin startproject djlogger .
-
-# apply database migration
+# apply initial database migration
 python manage.py migrate
-
 # start the development server
 python manage.py runserver
 
-# 
+# create an app
 python manage.py startapp djlogs
+
+# add class Topic to app model, then make migrations, then migrate
+python manage.py makemigrations djlogs
+python manage.py migrate
+
 ```
 
 ## Reference
