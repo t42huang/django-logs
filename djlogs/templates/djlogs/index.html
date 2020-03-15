@@ -1,4 +1,12 @@
 {% extends "djlogs/base.html" %}
-{% block content %}
-    <p>Django Log helps you keep track of things you are interested in.</p>
-{% endblock content %}
+
+{% block page_header %}
+    <div class="jumbotron">
+        <h1 class="display-3">Track yourself.</h1>
+        <p class="lead">Make your own logs, and keep a list of the
+            topics you're interested in. Whenever you find some interesting things
+            about a topic, make an entry summarization.</p>
+        <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"
+            role="button">Register &raquo;</a>
+    </div>
+{% endblock page_header %}
