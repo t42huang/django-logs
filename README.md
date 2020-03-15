@@ -21,6 +21,9 @@ python manage.py migrate
 
 # start the development server
 python manage.py runserver
+
+# 
+python manage.py startapp djlogs
 ```
 
 ## Reference
