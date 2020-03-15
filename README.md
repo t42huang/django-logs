@@ -38,6 +38,21 @@ python manage.py createsuperuser
 python manage.py makemigrations djlogs
 python manage.py migrate
 
+# introduce Django shell, another way to manage the shell
+python manage.py shell
+>>> from djlogs.models import Topic
+>>> Topic.objects.all()
+<QuerySet [<Topic: Python>, <Topic: Django>, <Topic: Flask>, <Topic: Python>]>
+>>> from djlogs.models import Entry
+>>> Entry.objects.all()
+<QuerySet [<Entry: Python is great!...>, <Entry: Flask is cool!...>, <Entry: Django is awesome!...>]>
+>>> entries = Entry.objects.all()
+>>> for entry in entries:
+...   print(entry.text, entry.topic)
+...
+Python is great! Python
+Flask is cool! Flask
+Django is awesome! Django
 ```
 
 ## Reference
