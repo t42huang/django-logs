@@ -34,6 +34,10 @@ python manage.py createsuperuser
 ## check out the website at: http://127.0.0.1:8000/admin
 ## now you can add/update/delete/list topics in the Topic table
 
+# add class Entry to app model, then make migrations, then migrate
+python manage.py makemigrations djlogs
+python manage.py migrate
+
 ```
 
 ## Reference
