@@ -43,7 +43,9 @@ def new_topic(request):
         # POST data submitted; proccess data
         form = TopicForm(data=request.POST)
         if form.is_valid():
-            form.save()
+            new_topic = form.save(commit=False)
+            new_topic.owner = request.user
+            new_topic.save()
             return redirect('djlogs:topics')
     
     # Display a blank or invalid form.
