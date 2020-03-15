@@ -53,7 +53,13 @@ python manage.py shell
 Python is great! Python
 Flask is cool! Flask
 Django is awesome! Django
+
+
+# create anther app for user authentication
+python manage.py startapp users
+
 ```
+
 
 ## Reference
 
