@@ -132,11 +132,12 @@ LOGIN_URL = 'users:login'
 import django_heroku
 django_heroku.settings(locals())
 
-if os.environ.get('DEBUG') == 'TRUE':
-    DEBUG = True
+if os.environ.get('DEBUG') == 'False': # Produciton mode
+    DEBUG = False
+
+    print('NOTE: make sure you setup environment variable - SECRET_KEY for Production mode')
+else: # Dev Mode
+    DEBUG = True 
 
     # SECURITY WARNING: keep the secret key used in production secret!
     SECRET_KEY = 'qj#n(fwxd5=5sov4nevx6^7e(^1wt90!0=h7f1b!p8@$jled=a'
-elif os.environ.get('DEBUG') == 'FALSE':
-    DEBUG = False
-    print('NOTE: make sure you setup an environment variable - SECRET_KEY')
