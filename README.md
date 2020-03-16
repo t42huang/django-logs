@@ -1,5 +1,9 @@
 # Django Logger
 
+## Demo
+
+This project is deployed at https://tinas-django-logs.herokuapp.com for demo. Feel free to check it out.
+
 ## Steps
 
 - check and make sure your python version is python 3: `python -V`
