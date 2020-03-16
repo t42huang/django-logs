@@ -81,6 +81,13 @@ git push heroku master
 heroku config:set DEBUG='FALSE'
 # - now if you visit the same page again, it will hide away unnecessary information for end user.
 
+## for added security, config a secret key for production env, e.g.
+# - you can obtain one using python, e.g.
+$ python -c "import uuid; print(uuid.uuid4().hex)"
+451fb946610240daa5c0d19f40b71387
+# - configure your heroku account using your secret key, e.g.
+$ heroku config:set SECRET_KEY=451fb946610240daa5c0d19f40b71387
+
 ```
 
 ## Logs
