@@ -11,6 +11,10 @@
                 role="button">Topics &raquo;</a>
             <a class="btn btn-lg btn-primary" href="{% url 'djlogs:new_topic' %}"
                 role="button">Add New &raquo;</a>
+            {% if request.user.is_superuser %}
+                <a class="btn btn-lg btn-danger" href="{% url 'admin:index' %}"
+                    role="button">Admin &raquo;</a>
+            {% endif %}
         {% else %}
             <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"
                 role="button">Register &raquo;</a>
