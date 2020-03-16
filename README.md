@@ -70,6 +70,16 @@ Superuser created successfully.
 # - to close this bash session, run
 exit
 
+
+# DEBUG mode vs PRODUCTION mode:
+## normally when we deploy for public use, we turn off debug mode for better user experience and for better security, to do this, we can set an environment variable.
+
+# - as we added some changes on settings to toggle between debug and product, we need to commit the changes and push this project repo to heroku first.
+git commit -m "enable toggle between debug and production modes on heroku"
+git push heroku master
+# - then we can set the environment variable on heroku server by running:
+heroku config:set DEBUG='FALSE'
+
 ```
 
 ## Logs
