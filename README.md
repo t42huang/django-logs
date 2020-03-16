@@ -47,6 +47,29 @@ heroku open
 heroku run python manage.py migrate
 ## then you should be able to register, login, add/update/delete topics/entries, ...
 
+
+# To add a superuser, you can connect to heroku server via a bash terminal session, and run commands there to create superuser, as we did in our local environement:
+
+# - connect to Heroku server via a bash terminal session:
+$ heroku run bash
+ ›   Warning: heroku update available from 7.35.0 to 7.39.0.
+Running bash on ⬢ tinas-django-logs... up, run.5363 (Free)
+~ $ ls
+djlogger  manage.py  README.md	       runtime.txt  users
+djlogs	  Procfile   requirements.txt  staticfiles
+
+# - then create a superuser
+$ python manage.py createsuperuser
+Username (leave blank to use 'u39238'): admin
+Email address: john@example.com
+Password:
+Password (again):
+Superuser created successfully.
+## then you can login as admin, and visit https://<appname>.herokuapp.com/admin/ to do you admin work.
+
+# - to close this bash session, run
+exit
+
 ```
 
 ## Logs
