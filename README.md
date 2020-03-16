@@ -10,6 +10,40 @@
 - install project dependencies: `pip install -r requirements.txt`
   - Note: content in requirements.txt comes from `pip freeze > requirements.txt`
 
+## Deploy on Heroku
+
+```bash
+# prerequisites:
+# - make sure you are in your project root directory
+# - the project is git tracked
+# - create your own free heroku account, then log in from the terminal:
+$ heroku login -i
+
+# run the following command to check current remote(s) of this repo, if there is any:
+git remote -v
+
+# then, in the project root directory, run this to create a heroku app
+$ heroku create <appname>
+Creating <appname>... done
+https://<appname>.herokuapp.com/ | https://git.heroku.com/<appname>.git
+
+For Example:
+https://tinas-django-logs.herokuapp.com/ | https://git.heroku.com/tinas-django-logs.git
+
+# run the following command again to confirm that the remote - heroku is added:
+git remote -v
+
+# then, push this project repo to heroku
+git push heroku master
+
+# now the app should be up running on heroku
+# to check the server started correctly, run
+heroku ps
+
+# if all is well, you can go check the app on https://<appname>.herokuapp.com/, or run the following to open the link in a browser tab:
+heroku open
+```
+
 ## Logs
 
 ```bash
