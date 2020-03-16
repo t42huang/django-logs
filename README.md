@@ -42,6 +42,11 @@ heroku ps
 
 # if all is well, you can go check the app on https://<appname>.herokuapp.com/, or run the following to open the link in a browser tab:
 heroku open
+
+# until now, any page related with database calls will fail because we haven't migrated the database yet. To do this, run the following command:
+heroku run python manage.py migrate
+## then you should be able to register, login, add/update/delete topics/entries, ...
+
 ```
 
 ## Logs
