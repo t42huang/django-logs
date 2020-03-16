@@ -72,7 +72,7 @@ exit
 
 
 # DEBUG mode vs PRODUCTION mode:
-# - normally when we deploy for public use, we turn off debug mode for better user experience and for better security, to do this, we can set an environment variable. For example, if a user visits an non-existing url like this: https://tinas-django-logs.herokuapp.com/this-is-an-non-existing-url, the page returned will contain debug information that we don't want the end user or a hacker to see.
+# - normally when we deploy for public use, we turn off debug mode for better user experience and for better security, to do this, we can set an environment variable. For example, if a user visit 404-Error pages like https://tinas-django-logs.herokuapp.com/this-is-an-non-existing-url or 500-Error pages like https://tinas-django-logs.herokuapp.com/topics/999999999/, the pages returned will contain debug information that we don't want the end user or a hacker to see.
 
 # - so we added some changes on settings to toggle between debug and product, but we need to commit the changes and push this project repo to heroku first.
 git commit -m "enable toggle between debug and production modes on heroku"

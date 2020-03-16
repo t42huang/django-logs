@@ -24,6 +24,7 @@ SECRET_KEY = 'qj#n(fwxd5=5sov4nevx6^7e(^1wt90!0=h7f1b!p8@$jled=a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -62,7 +63,7 @@ ROOT_URLCONF = 'djlogger.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
